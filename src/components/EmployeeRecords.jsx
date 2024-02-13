@@ -31,7 +31,7 @@ function EmployeeRecords() {
                     {employees.map(employee => (
                         <tr key={employee.id}>
                             <td>{employee.id}</td>
-                            <td><img className="inline-block h-6 w-6 rounded-full object-cover mr-1"src={employee.image} alt="Profile pic" /> {employee.name}</td>
+                            <td><img className="inline-block h-6 w-6 rounded-full object-cover mr-1 hover:cursor-pointer"src={employee.image} alt="Profile pic" /> {employee.name}</td>
                             <td>{employee.email}</td>
                             <td>{employee.department}</td>
                             <td>{employee.role}</td>

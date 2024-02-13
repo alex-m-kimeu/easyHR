@@ -9,10 +9,10 @@ function App() {
     <>
     <Header />
     <Switch>
-      <Route exact path="/easyHR/">
+      <Route exact path="/">
         <EmployeeRecords />
       </Route>
-      <Route path="/easyHR/new-hire">
+      <Route path="/new-hire">
         <NewHire /> 
       </Route>
       <Route path="*">
