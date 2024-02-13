@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { IoTrashBin } from "react-icons/io5";
+import { MdNoteAlt } from "react-icons/md";
 
 function EmployeeRecords() {
     const [employees, setEmployees] = useState([])
@@ -32,8 +34,8 @@ function EmployeeRecords() {
                             <td>{employee.department}</td>
                             <td>{employee.role}</td>
                             <td>
-                                <button>Edit</button>
-                                <button>Delete</button>
+                                <button><MdNoteAlt className="fill-green"/></button>
+                                <button><IoTrashBin className="fill-[#FF3C5F]"/></button>
                             </td>
                         </tr>
                     ))}
