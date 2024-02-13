@@ -8,7 +8,7 @@ function App() {
     <>
     <Header />
     <Switch>
-      <Route exact path="/">
+      <Route exact path="/easyHR/">
         <EmployeeRecords />
       </Route>
       <Route path="/new-hire">
