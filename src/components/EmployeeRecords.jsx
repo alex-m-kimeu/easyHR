@@ -11,7 +11,7 @@ function EmployeeRecords() {
 
     return (
         <div>
-            <h2>Employee Records</h2>
+            <h2 className="text-green font-sans font-extrabold text-2xl text-center py-5">Employee Records</h2>
             <table>
                 <thead>
                     <tr>
