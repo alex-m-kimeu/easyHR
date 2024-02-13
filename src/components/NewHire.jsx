@@ -6,35 +6,35 @@ function NewHire() {
                 <form className="flex flex-col justify-evenly">
                     <div className="mb-6">
                         <input 
-                        className="w-full px-3 py-2 bg-white border border-green rounded-md text-sm  placeholder-green outline-none"
+                        className="w-full px-3 py-2 bg-white border border-green rounded-md text-sm text-dark  placeholder-green outline-none"
                         type="text" 
                         placeholder="Employees name..."
                     />
                     </div>
                     <div className="mb-6">
                         <input
-                        className="w-full px-3 py-2 bg-white border border-green rounded-md text-sm  placeholder-green outline-none" 
+                        className="w-full px-3 py-2 bg-white border border-green rounded-md text-sm text-dark   placeholder-green outline-none" 
                         type="text" 
                         placeholder="Employees email..."
                     />
                     </div>
                     <div className="mb-6">
                         <input
-                        className="w-full px-3 py-2 bg-white border border-green rounded-md text-sm  placeholder-green outline-none"
+                        className="w-full px-3 py-2 bg-white border border-green rounded-md text-sm text-dark   placeholder-green outline-none"
                         type="text"
                         placeholder="Department..."
                         />
                     </div>
                     <div className="mb-6">
                         <input
-                        className="w-full px-3 py-2 bg-white border border-green rounded-md text-sm  placeholder-green outline-none"
+                        className="w-full px-3 py-2 bg-white border border-green rounded-md text-sm text-dark   placeholder-green outline-none"
                         type="text"
                         placeholder="Role..."
                         />
                     </div>
                     <div className="mb-6">
                         <input
-                        className="w-full px-3 py-2 bg-white border border-green rounded-md text-sm  placeholder-green outline-none"
+                        className="w-full px-3 py-2 bg-white border border-green rounded-md text-sm text-dark   placeholder-green outline-none"
                         type="text" 
                         placeholder="Profile Pic URL..."
                         />
