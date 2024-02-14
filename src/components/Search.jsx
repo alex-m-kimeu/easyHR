@@ -1,6 +1,4 @@
 /* eslint-disable react/prop-types */
-
-
 function Search({ search, setSearch  }) {
     return (
         <div>

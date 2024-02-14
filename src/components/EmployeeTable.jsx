@@ -2,7 +2,14 @@
 import { IoTrashBin } from "react-icons/io5";
 import { MdNoteAlt } from "react-icons/md";
 
-function EmployeeTable({ employee }) {
+function EmployeeTable({ employee, onDelete }) {
+  function handleDelete(){
+    fetch(`https://easy-hr-api.vercel.app/employees/${employee.id}`, {
+      method: "DELETE",
+    })
+    onDelete(employee.id);
+  }
+
   return (
     <tr key={employee.id}>
       <td>{employee.id}</td>
@@ -22,7 +29,7 @@ function EmployeeTable({ employee }) {
         <button>
           <MdNoteAlt className="fill-green mr-2" />
         </button>
-        <button>
+        <button onClick={handleDelete}>
           <IoTrashBin className="fill-[#FF3C5F]" />
         </button>
       </td>

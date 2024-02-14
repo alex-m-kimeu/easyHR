@@ -7,7 +7,7 @@ function Header() {
     <header className="px-28 py-[5px] flex justify-between shadow-sm items-center">
       <img className="h-10" src={logo} alt="logo" />
       <nav className="space-x-16 font-sans font-normal text-[1.05rem] text-dark active:text-green">
-        <NavLink exact to="/" className="hover:text-green ">
+        <NavLink exact to="/" className="hover:text-green" >
           Employee Records
         </NavLink>
         <NavLink exact to="/new-hire" className="hover:text-green">

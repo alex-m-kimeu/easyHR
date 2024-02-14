@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import EmployeeTable from "./EmployeeTable";
 
-function EmployeesList({ employees }) {
+function EmployeesList({ employees, onDelete }) {
   return (
     <div>
       <table>
@@ -18,7 +18,7 @@ function EmployeesList({ employees }) {
         </thead>
         <tbody>
           {employees.map((employee) => {
-            return <EmployeeTable key={employee.id} employee={employee} />;
+            return <EmployeeTable key={employee.id} employee={employee} onDelete={onDelete}/>;
           })}
         </tbody>
       </table>
