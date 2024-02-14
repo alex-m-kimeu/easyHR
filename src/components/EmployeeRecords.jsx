@@ -10,6 +10,7 @@ function EmployeeRecords() {
         fetch("https://easy-hr-api.vercel.app/employees")
             .then(resp => resp.json())
             .then(employees => setEmployees(employees))
+            .catch(err => console.log(err))
     }, [])
 
     return (
