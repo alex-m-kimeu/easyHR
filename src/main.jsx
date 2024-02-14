@@ -1,10 +1,10 @@
 import ReactDOM from 'react-dom/client'
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from './components/App'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <HashRouter>
+  <BrowserRouter basename={import.meta.env.DEV ? '/' : '/react-vite-gh-pages/'}>
     <App/>
-  </HashRouter>
+  </BrowserRouter>
 )
