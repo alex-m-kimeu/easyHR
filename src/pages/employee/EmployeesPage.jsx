@@ -6,9 +6,6 @@ export const  EmployeesPage = () => {
   const [employees, setEmployees] = useState([]);
   const [search, setSearch] = useState("");
 
-  const isLogged = !!localStorage.getItem('accessToken');
-  console.log(isLogged,">>>>>>>");
-
   useEffect(() => {
     fetch("https://easy-hr-api.vercel.app/employees")
       .then((resp) => resp.json())

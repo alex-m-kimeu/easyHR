@@ -7,7 +7,7 @@ export default {
   darkMode: 'class',
   theme: {
     screens: {
-      'sm': '1165px',
+      'sm': '1180px',
     },
     extend: {
       boxShadow: {
