@@ -1,12 +1,23 @@
+import { useState, useEffect } from 'react';
 import logo from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
-import { GoSun } from "react-icons/go";
+import { GoSun, GoMoon } from "react-icons/go";
 
 function Header() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [darkMode]);
+
   return (
-    <header className="px-28 py-[5px] flex justify-between shadow-sm items-center">
+    <header className="px-28 py-[5px] flex justify-between shadow-sm items-center bg-white dark:bg-dark1">
       <img className="h-10" src={logo} alt="logo" />
-      <nav className="space-x-16 font-sans font-normal text-[1.05rem] text-dark active:text-green">
+      <nav className="space-x-16 font-sans font-normal text-[1.05rem] text-dark dark:text-white active:text-green">
         <NavLink exact to="/" className="hover:text-green" >
           Employee Records
         </NavLink>
@@ -14,7 +25,11 @@ function Header() {
           New Hire
         </NavLink>
       </nav>
-      <GoSun className="h-6 w-6 fill-green hover:cursor-pointer hover:fill-green" />
+      {darkMode ? (
+        <GoSun className="h-6 w-6 fill-green hover:cursor-pointer hover:fill-green" onClick={() => setDarkMode(false)} />
+      ) : (
+        <GoMoon className="h-6 w-6 fill-green hover:cursor-pointer hover:fill-green" onClick={() => setDarkMode(true)} />
+      )}
     </header>
   );
 }

@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       boxShadow: {
@@ -12,6 +13,9 @@ export default {
       colors: {
         'dark': '#2d2e2e',
         'green': '#48937e',
+        'dark1': '#323434',
+        'dark2': '#4c4d4d',
+        'dark3': '#3F4040',              
       },
     }
   },

@@ -12,14 +12,14 @@ function EmployeeTable({ employee, onDelete }) {
   }
 
   return (
-    <tr key={employee.id} className="bg-white ">
+    <tr key={employee.id} className="bg-white dark:bg-dark border-[6px] border-white dark:border-dark3">
       <td className="p-[10px]">{employee.id}</td>
       <td className="p-[10px]">
         <img
           className="inline-block h-6 w-6 rounded-full object-cover mr-1"
           src={employee.image}
           alt="Profile pic"
-        />{" "}
+        />
         {employee.name}
       </td>
       <td className="p-[10px]">{employee.email}</td>

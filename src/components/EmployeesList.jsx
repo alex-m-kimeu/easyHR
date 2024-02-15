@@ -5,7 +5,7 @@ function EmployeesList({ employees, onDelete }) {
   return (
     <div className="overflow-hidden ">
       <table className="w-full text-left font-sans text-dark">
-        <thead className="text-[18px] font-normal bg-green text-white">
+        <thead className="text-[18px] font-normal bg-green dark:bg-dark1 text-white dark:text-green">
           <tr>
             <th className="p-[10px]">ID</th>
             <th className="p-[10px]">Employee Name</th>
@@ -16,7 +16,7 @@ function EmployeesList({ employees, onDelete }) {
             <th className="p-[10px]">Actions</th>
           </tr>
         </thead>
-        <tbody className="text-[16px] font-normal text-dark">
+        <tbody className="text-[16px] font-normal text-dark dark:text-white ">
           {employees.map((employee) => {
             return <EmployeeTable key={employee.id} employee={employee} onDelete={onDelete} />;
           })}

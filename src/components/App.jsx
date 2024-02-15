@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main className="dark:bg-dark3 h-screen">
         <Switch>
           <Route exact path="/">
             <EmployeesPage />
