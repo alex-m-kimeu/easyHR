@@ -19,7 +19,7 @@ function Header() {
   }, [darkMode]);
 
   return (
-    <header className="px-28 py-[5px] flex justify-between shadow-sm items-center bg-white dark:bg-dark1 fixed top-0 w-full z-50">
+    <header className="px-28 py-[5px] flex justify-between shadow-sm items-center bg-white dark:bg-dark1">
       <img className="h-10" src={logo} alt="logo" />
       <nav className="space-x-16 font-sans font-normal text-[1.05rem] text-dark dark:text-white active:text-green">
         <NavLink exact to="/" className="hover:text-green" activeClassName="text-green">
