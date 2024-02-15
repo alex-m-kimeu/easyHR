@@ -4,24 +4,28 @@ import { NavLink } from "react-router-dom";
 import { GoSun, GoMoon } from "react-icons/go";
 
 function Header() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const localData = localStorage.getItem('darkMode');
+    return localData ? JSON.parse(localData) : false;
+  });
 
   useEffect(() => {
     if (darkMode) {
-      document.documentElement.classList.add('dark')
+      document.documentElement.classList.add('dark');
     } else {
-      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.remove('dark');
     }
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
   }, [darkMode]);
 
   return (
-    <header className="px-28 py-[5px] flex justify-between shadow-sm items-center bg-white dark:bg-dark1">
+    <header className="px-28 py-[5px] flex justify-between shadow-sm items-center bg-white dark:bg-dark1 fixed top-0 w-full z-50">
       <img className="h-10" src={logo} alt="logo" />
       <nav className="space-x-16 font-sans font-normal text-[1.05rem] text-dark dark:text-white active:text-green">
-        <NavLink exact to="/" className="hover:text-green" >
+        <NavLink exact to="/" className="hover:text-green" activeClassName="text-green">
           Employee Records
         </NavLink>
-        <NavLink exact to="/new-hire" className="hover:text-green">
+        <NavLink exact to="/new-hire" className="hover:text-green" activeClassName="text-green">
           New Hire
         </NavLink>
       </nav>
