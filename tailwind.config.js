@@ -6,6 +6,9 @@ export default {
   ],
   darkMode: 'class',
   theme: {
+    screens: {
+      'sm': '1165px',
+    },
     extend: {
       boxShadow: {
         'lg': '0 0 10px rgba(0, 0, 0, 0.1)',

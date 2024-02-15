@@ -25,7 +25,7 @@ export const  EmployeesPage = () => {
   }
 
   return (
-    <div className="px-28 dark:bg-dark3">
+    <div className="px-4 sm:px-28 dark:bg-dark3">
       <h2 className="text-green font-sans font-extrabold text-2xl text-center py-5">
         Employee Records
       </h2>

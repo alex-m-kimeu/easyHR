@@ -41,8 +41,8 @@ export const NewHire = () => {
   }
 
   return (
-    <div className="flex justify-center">
-      <div className="flex flex-col w-96 h-80.5 shadow-lg m-8 rounded-lg p-4 bg-white dark:bg-dark1">
+    <div className="flex justify-center mt-4 sm:mt-12">
+      <div className="flex flex-col w-96 h-80.5 shadow-lg m-4 sm:m-8 rounded-lg p-4 bg-white dark:bg-dark1">
         <h2 className="text-center text-dark dark:text-green font-sans font-medium text-lg mb-1">
           Add New Hire
         </h2>
