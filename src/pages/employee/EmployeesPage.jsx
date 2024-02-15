@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import EmployeesList from "./EmployeesList";
-import Search from "./Search";
+import { EmployeesList } from "./EmployeesList";
+import { Search } from "./Search";
 
-function EmployeesPage() {
+export const  EmployeesPage = () => {
   const [employees, setEmployees] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -25,14 +25,12 @@ function EmployeesPage() {
   }
 
   return (
-    <main className="px-28">
+    <div className="px-28 dark:bg-dark3">
       <h2 className="text-green font-sans font-extrabold text-2xl text-center py-5">
         Employee Records
       </h2>
       <Search search={search} setSearch={setSearch}/>
       <EmployeesList employees={filteredEmployees } onDelete={handleDelete} />
-    </main>
+    </div>
   );
 }
-
-export default EmployeesPage;

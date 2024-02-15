@@ -1,10 +1,10 @@
 import { Route, Switch } from "react-router-dom";
-import EmployeesPage from "./EmployeesPage";
-import Header from "./Header";
-import NewHire from "./NewHire";
-import Footer from "./Footer";
+import { EmployeesPage } from "./pages/employee/EmployeesPage";
+import { Header } from "./pages/header/Header";
+import { NewHire } from "./pages/newHire/NewHire";
+import { Footer } from "./pages/footer/Footer";
 
-function App() {
+export const App = () => {
   return (
     <>
       <Header />
@@ -27,5 +27,3 @@ function App() {
     </>
   );
 }
-
-export default App;

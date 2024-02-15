@@ -2,7 +2,7 @@
 import { IoTrashBin } from "react-icons/io5";
 import { MdNoteAlt } from "react-icons/md";
 
-function EmployeeTable({ employee, onDelete }) {
+export const EmployeeTable = ({ employee, onDelete }) => {
   // Delete employee
   function handleDelete(){
     fetch(`https://easy-hr-api.vercel.app/employees/${employee.id}`, {
@@ -37,5 +37,3 @@ function EmployeeTable({ employee, onDelete }) {
     </tr>
   );
 }
-
-export default EmployeeTable;

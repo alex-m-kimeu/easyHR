@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-function NewHire() {
+export const NewHire = () => {
   const history = useHistory();
 
   const [formData, setFormData] = useState({
@@ -41,7 +41,7 @@ function NewHire() {
   }
 
   return (
-    <div className="flex justify-center mt-12">
+    <div className="flex justify-center">
       <div className="flex flex-col w-96 h-80.5 shadow-lg m-8 rounded-lg p-4 bg-white dark:bg-dark1">
         <h2 className="text-center text-dark dark:text-green font-sans font-medium text-lg mb-1">
           Add New Hire
@@ -120,5 +120,3 @@ function NewHire() {
     </div>
   );
 }
-
-export default NewHire;

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 import { NavLink } from "react-router-dom";
 import { GoSun, GoMoon } from "react-icons/go";
 
-function Header() {
+export const Header = () => {
   const [darkMode, setDarkMode] = useState(() => {
     const localData = localStorage.getItem('darkMode');
     return localData ? JSON.parse(localData) : false;
@@ -37,5 +37,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;

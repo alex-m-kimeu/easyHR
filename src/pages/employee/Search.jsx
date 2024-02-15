@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-function Search({ search, setSearch  }) {
+export const Search = ({ search, setSearch  }) => {
     return (
         <div>
         <input
@@ -12,5 +12,3 @@ function Search({ search, setSearch  }) {
         </div>
     );
 }
-
-export default Search;
