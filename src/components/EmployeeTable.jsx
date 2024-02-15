@@ -3,6 +3,7 @@ import { IoTrashBin } from "react-icons/io5";
 import { MdNoteAlt } from "react-icons/md";
 
 function EmployeeTable({ employee, onDelete }) {
+  // Delete employee
   function handleDelete(){
     fetch(`https://easy-hr-api.vercel.app/employees/${employee.id}`, {
       method: "DELETE",
@@ -11,21 +12,21 @@ function EmployeeTable({ employee, onDelete }) {
   }
 
   return (
-    <tr key={employee.id}>
-      <td>{employee.id}</td>
-      <td>
+    <tr key={employee.id} className="bg-white ">
+      <td className="p-[10px]">{employee.id}</td>
+      <td className="p-[10px]">
         <img
-          className="inline-block h-6 w-6 rounded-full object-cover mr-1 hover:cursor-pointer"
+          className="inline-block h-6 w-6 rounded-full object-cover mr-1"
           src={employee.image}
           alt="Profile pic"
         />{" "}
         {employee.name}
       </td>
-      <td>{employee.email}</td>
-      <td>{employee.department}</td>
-      <td>{employee.role}</td>
-      <td>{employee.gender}</td>
-      <td>
+      <td className="p-[10px]">{employee.email}</td>
+      <td className="p-[10px]">{employee.department}</td>
+      <td className="p-[10px]">{employee.role}</td>
+      <td className="p-[10px]">{employee.gender}</td>
+      <td className="p-[10px] flex gap-[5px]">
         <button>
           <MdNoteAlt className="fill-green mr-2" />
         </button>

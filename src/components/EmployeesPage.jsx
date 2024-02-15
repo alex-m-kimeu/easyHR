@@ -16,7 +16,7 @@ function EmployeesPage() {
   // Search filter
   const filteredEmployees = employees.filter((employee) => {
     return employee.name.toLowerCase().includes(search.toLowerCase());
-  });  
+  });
 
   // Delete employee
   function handleDelete(id){
@@ -30,7 +30,7 @@ function EmployeesPage() {
         Employee Records
       </h2>
       <Search search={search} setSearch={setSearch}/>
-      <EmployeesList employees={filteredEmployees } onDelete={handleDelete}/>
+      <EmployeesList employees={filteredEmployees } onDelete={handleDelete} />
     </main>
   );
 }
