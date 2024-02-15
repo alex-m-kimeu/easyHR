@@ -3,13 +3,17 @@ import { EmployeesPage } from "./pages/employee/EmployeesPage";
 import { Header } from "./pages/header/Header";
 import { NewHire } from "./pages/newHire/NewHire";
 import { Footer } from "./pages/footer/Footer";
+import { LoginPage } from "./pages/login/LoginPage";
 
 export const App = () => {
   return (
     <>
       <Header />
-      <main className="dark:bg-dark3 h-screen">
+      <div className="dark:bg-dark3 h-screen">
         <Switch>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
           <Route exact path="/">
             <EmployeesPage />
           </Route>
@@ -22,7 +26,7 @@ export const App = () => {
             </h1>
           </Route>
         </Switch>
-      </main>
+      </div>
       <Footer />
     </>
   );
