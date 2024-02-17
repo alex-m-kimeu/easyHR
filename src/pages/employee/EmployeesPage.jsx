@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { EmployeesList } from "./EmployeesList";
 import { Search } from "./Search";
 
-export const  EmployeesPage = () => {
+export const EmployeesPage = () => {
   const [employees, setEmployees] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -19,7 +19,7 @@ export const  EmployeesPage = () => {
   });
 
   // Delete employee
-  function handleDelete(id){
+  function handleDelete(id) {
     const newEmployees = employees.filter((employee) => employee.id !== id);
     setEmployees(newEmployees);
   }
@@ -29,8 +29,8 @@ export const  EmployeesPage = () => {
       <h2 className="text-green font-sans font-extrabold text-2xl text-center py-5">
         Employee Records
       </h2>
-      <Search search={search} setSearch={setSearch}/>
-      <EmployeesList employees={filteredEmployees } onDelete={handleDelete} />
+      <Search search={search} setSearch={setSearch} />
+      <EmployeesList employees={filteredEmployees} onDelete={handleDelete} />
     </div>
   );
 }

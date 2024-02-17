@@ -4,7 +4,7 @@ import { MdNoteAlt } from "react-icons/md";
 
 export const EmployeeTable = ({ employee, onDelete }) => {
   // Delete employee
-  function handleDelete(){
+  function handleDelete() {
     fetch(`https://easy-hr-api.vercel.app/employees/${employee.id}`, {
       method: "DELETE",
     })

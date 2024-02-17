@@ -3,6 +3,7 @@ import { EmployeesPage } from "./pages/employee/EmployeesPage";
 import { Header } from "./pages/header/Header";
 import { NewHire } from "./pages/newHire/NewHire";
 import { Footer } from "./pages/footer/Footer";
+import error from "../src/assets/404.svg"
 
 export const App = () => {
   return (
@@ -17,9 +18,9 @@ export const App = () => {
             <NewHire />
           </Route>
           <Route path="*">
-            <h1 className="font-sans text-4xl font-bold text-center">
-              404 Not Found
-            </h1>
+            <div className="min-h-screen flex items-start justify-center sm:mt-20 mt-10">
+              <img src={error} alt="404" className="w-full max-w-md sm:max-w-md mx-auto" />
+            </div>
           </Route>
         </Switch>
       </div>

@@ -2,11 +2,7 @@
 import { useState } from "react";
 import logo from "../../assets/logo.png";
 import { auth } from "../../firebase/config";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  sendPasswordResetEmail
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 
 export const LoginPage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -53,11 +49,11 @@ export const LoginPage = () => {
       });
   };
 
-    const handlePasswordReset = () => {
+  const handlePasswordReset = () => {
     const email = prompt("Enter your email");
     sendPasswordResetEmail(auth, email)
     alert("Password reset email sent");
-    };
+  };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
@@ -71,21 +67,19 @@ export const LoginPage = () => {
           </p>
           <div className="flex justify-center mb-4 gap-4">
             <button
-              className={`btn ${
-                loginType === "login"
+              className={`btn ${loginType === "login"
                   ? "bg-green text-white"
                   : "bg-gray-200 text-gray-500"
-              } px-4 py-2 rounded-full font-semibold`}
+                } px-4 py-2 rounded-full font-semibold`}
               onClick={() => setLoginType("login")}
             >
               Login
             </button>
             <button
-              className={`btn ${
-                loginType === "signup"
+              className={`btn ${loginType === "signup"
                   ? "bg-green text-white"
                   : "bg-gray-200 text-gray-500"
-              } px-4 py-2 rounded-full font-semibold`}
+                } px-4 py-2 rounded-full font-semibold`}
               onClick={() => setLoginType("signup")}
             >
               Signup

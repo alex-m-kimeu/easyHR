@@ -35,9 +35,8 @@ export const Header = () => {
         </div>
       </div>
       <nav
-        className={`flex flex-col space-y-4 sm:space-x-16 sm:space-y-0 sm:flex-row font-sans font-normal text-[1.05rem] text-dark dark:text-white active:text-green ${
-          isOpen ? "block" : "hidden"
-        } sm:block`}
+        className={`flex flex-col space-y-4 sm:space-x-16 sm:space-y-0 sm:flex-row font-sans font-normal text-[1.05rem] text-dark dark:text-white active:text-green ${isOpen ? "block" : "hidden"
+          } sm:block`}
       >
         <NavLink
           exact
