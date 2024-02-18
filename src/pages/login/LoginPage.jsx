@@ -60,7 +60,7 @@ export const LoginPage = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md bg-white p-8 rounded shadow-md">
+      <div className=" w-11/12 sm:w-1/4 max-w-md bg-white p-8 rounded shadow-md">
         <section>
           <div className="flex justify-center">
             <img src={logo} alt="logo" className="h-10 mb-4" />
