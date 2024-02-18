@@ -44,7 +44,7 @@ export const Header = () => {
       <div className={`flex flex-col sm:flex-row justify-between items-center w-full sm:w-auto mt-4 sm:mt-0 ${isOpen ? "block" : "hidden"
         } sm:block`}>
         <nav
-          className="flex flex-col sm:flex-row space-y-4 sm:space-x-16 sm:space-y-0 font-sans font-normal text-[1.05rem] text-dark dark:text-white active:text-green"
+          className="flex flex-col items-center sm:flex-row space-y-4 sm:space-x-16 sm:space-y-0 font-sans font-normal text-[1.05rem] text-dark dark:text-white active:text-green"
         >
           <NavLink
             data-testid="employee-link"
