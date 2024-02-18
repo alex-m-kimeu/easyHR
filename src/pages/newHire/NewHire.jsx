@@ -35,7 +35,6 @@ export const NewHire = () => {
       gender: "Male",
       image: "",
     })
-    history.push("/");
   }
 
   return (
