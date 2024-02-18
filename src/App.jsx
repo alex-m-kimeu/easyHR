@@ -1,30 +1,52 @@
-import { Route, Switch } from "react-router-dom";
-import { EmployeesPage } from "./pages/employee/EmployeesPage";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import routes from "./routes";
+import AuthWrapper from "./AuthWrapper";
 import { Header } from "./pages/header/Header";
-import { NewHire } from "./pages/newHire/NewHire";
 import { Footer } from "./pages/footer/Footer";
-import error from "../src/assets/404.svg"
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase/config';
+
 
 export const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setIsAuthenticated(!!user);
+    });
+
+    return unsubscribe;
+  }, []);
+  
   return (
     <>
-      <Header />
-      <div className="dark:bg-dark3 h-screen">
-        <Switch>
-          <Route exact path="/">
-            <EmployeesPage />
-          </Route>
-          <Route path="/new-hire">
-            <NewHire />
-          </Route>
-          <Route path="*">
-            <div className="min-h-screen flex items-start justify-center sm:mt-20 mt-10">
-              <img src={error} alt="404" className="w-full max-w-md sm:max-w-md mx-auto" />
-            </div>
-          </Route>
-        </Switch>
-      </div>
-      <Footer />
+      <BrowserRouter basename={import.meta.env.DEV ? '/' : '/easyHR/'}>
+        <Routes>
+          {routes.map((route, index) => {
+            const { Element, path } = route;
+            if (route.isAuthenticated) {
+              return (
+                <Route
+                  exact
+                  key={index}
+                  path={path}
+                  element={
+                    <AuthWrapper isAuthenticated={isAuthenticated}>
+                      <Header />
+                      <div className="dark:bg-dark3 h-screen">
+                      <Element />
+                      </div>
+                      <Footer />
+                    </AuthWrapper>
+                  }
+                />
+              );
+            } else {
+              return <Route exact key={index} path="/" element={<Element />} />;
+            }
+          })}
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

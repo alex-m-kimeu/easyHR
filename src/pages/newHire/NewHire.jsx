@@ -1,9 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
 
 export const NewHire = () => {
-  const history = useHistory();
 
   const [formData, setFormData] = useState({
     name: "",

@@ -2,9 +2,16 @@ import { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
 import { NavLink } from "react-router-dom";
 import { GoSun, GoMoon } from "react-icons/go";
-import { FaBars, FaTimes } from "react-icons/fa"; // Import different icons
+import { FaBars, FaTimes } from "react-icons/fa";
+import { useNavigate } from "react-router";
+
 
 export const Header = () => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    navigate("/");
+  };
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     const localData = localStorage.getItem("darkMode");
@@ -39,20 +46,20 @@ export const Header = () => {
           } sm:block`}
       >
         <NavLink
-          exact
-          to="/"
+          data-testid="employee-link"
+          to="/employee"
           className="hover:text-green"
           activeClassName="text-green"
         >
-          Employee Records
+          Employees
         </NavLink>
         <NavLink
-          exact
-          to="/new-hire"
+          data-testid="hire-link"
+          to="/hire"
           className="hover:text-green"
           activeClassName="text-green"
         >
-          New Hire
+          Hire
         </NavLink>
       </nav>
       {darkMode ? (
@@ -66,6 +73,11 @@ export const Header = () => {
           onClick={() => setDarkMode(true)}
         />
       )}
+      <button
+        onClick={handleLogout}
+        className="bg-green text-white px-4 py-1 rounded-md hover:bg-darkgreen">
+        Logout
+      </button>
     </header>
   );
 };

@@ -3,12 +3,13 @@ import { useState } from "react";
 import logo from "../../assets/logo.png";
 import { auth } from "../../firebase/config";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
 export const LoginPage = () => {
-  const [isLoading, setIsLoading] = useState(false);
   const [loginType, setLoginType] = useState("login");
   const [useCredentials, setUseCredentials] = useState({});
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleCredentials = (e) => {
     setUseCredentials({ ...useCredentials, [e.target.name]: e.target.value });
@@ -25,6 +26,7 @@ export const LoginPage = () => {
     )
       .then((userCredential) => {
         const user = userCredential.user;
+        setLoginType('login');
       })
       .catch((error) => {
         setError(error.message);
@@ -42,7 +44,8 @@ export const LoginPage = () => {
     )
       .then((userCredential) => {
         const user = userCredential.user;
-        localStorage.setItem('accessToken', userCredential.user.accessToken)
+        localStorage.setItem('accessToken', userCredential.user.accessToken);
+        navigate('/employee');
       })
       .catch((error) => {
         setError(error.message);
@@ -68,8 +71,8 @@ export const LoginPage = () => {
           <div className="flex justify-center mb-4 gap-4">
             <button
               className={`btn ${loginType === "login"
-                  ? "bg-green text-white"
-                  : "bg-gray-200 text-gray-500"
+                ? "bg-green text-white"
+                : "bg-gray-200 text-gray-500"
                 } px-4 py-2 rounded-full font-semibold`}
               onClick={() => setLoginType("login")}
             >
@@ -77,8 +80,8 @@ export const LoginPage = () => {
             </button>
             <button
               className={`btn ${loginType === "signup"
-                  ? "bg-green text-white"
-                  : "bg-gray-200 text-gray-500"
+                ? "bg-green text-white"
+                : "bg-gray-200 text-gray-500"
                 } px-4 py-2 rounded-full font-semibold`}
               onClick={() => setLoginType("signup")}
             >
