@@ -28,8 +28,8 @@ export const Header = () => {
   }, [darkMode]);
 
   return (
-    <header className="px-4 sm:px-28 py-[5px] flex flex-col sm:flex-row justify-between gap-5 shadow-sm items-center bg-white dark:bg-dark1">
-      <div className="flex justify-between items-center gap-64 sm:gap-0">
+    <header className="px-2 sm:px-28 py-[5px] flex flex-col sm:flex-row justify-between shadow-sm items-center text-center bg-white dark:bg-dark1">
+      <div className="flex justify-between items-center w-full sm:w-auto">
         <img className="h-10" src={logo} alt="logo" />
         <div className="sm:hidden">
           <button type="button" onClick={() => setIsOpen(!isOpen)}>
@@ -41,43 +41,45 @@ export const Header = () => {
           </button>
         </div>
       </div>
-      <nav
-        className={`flex flex-col space-y-4 sm:space-x-16 sm:space-y-0 sm:flex-row font-sans font-normal text-[1.05rem] text-dark dark:text-white active:text-green ${isOpen ? "block" : "hidden"
-          } sm:block`}
-      >
-        <NavLink
-          data-testid="employee-link"
-          to="/employee"
-          className="hover:text-green"
-          activeClassName="text-green"
+      <div className={`flex flex-col sm:flex-row justify-between items-center w-full sm:w-auto mt-4 sm:mt-0 ${isOpen ? "block" : "hidden"
+        } sm:block`}>
+        <nav
+          className="flex flex-col sm:flex-row space-y-4 sm:space-x-16 sm:space-y-0 font-sans font-normal text-[1.05rem] text-dark dark:text-white active:text-green"
         >
-          Employees
-        </NavLink>
-        <NavLink
-          data-testid="hire-link"
-          to="/hire"
-          className="hover:text-green"
-          activeClassName="text-green"
-        >
-          Hire
-        </NavLink>
-      </nav>
-      {darkMode ? (
-        <GoSun
-          className="h-6 w-6 fill-green hover:cursor-pointer hover:fill-green"
-          onClick={() => setDarkMode(false)}
-        />
-      ) : (
-        <GoMoon
-          className="h-6 w-6 fill-green hover:cursor-pointer hover:fill-green"
-          onClick={() => setDarkMode(true)}
-        />
-      )}
-      <button
-        onClick={handleLogout}
-        className="bg-green text-white px-4 py-1 rounded-md hover:bg-darkgreen">
-        Logout
-      </button>
+          <NavLink
+            data-testid="employee-link"
+            to="/employee"
+            className="hover:text-green"
+          >
+            Employees
+          </NavLink>
+          <NavLink
+            data-testid="hire-link"
+            to="/hire"
+            className="hover:text-green"
+          >
+            Hire
+          </NavLink>
+          <button
+            onClick={handleLogout}
+            className="bg-green text-white px-4 py-1 rounded-md hover:bg-darkgreen">
+            Logout
+          </button>
+          <div className="mt-4 sm:mt-0 sm:ml-4 flex justify-center sm:justify-normal items-center">
+            {darkMode ? (
+              <GoSun
+                className="h-6 w-6 fill-green hover:cursor-pointer hover:fill-green"
+                onClick={() => setDarkMode(false)}
+              />
+            ) : (
+              <GoMoon
+                className="h-6 w-6 fill-green hover:cursor-pointer hover:fill-green"
+                onClick={() => setDarkMode(true)}
+              />
+            )}
+          </div>
+        </nav>
+      </div>
     </header>
   );
 };

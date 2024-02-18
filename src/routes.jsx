@@ -10,7 +10,7 @@ const routes = [
     isAuthenticated: false,
   },
 
-  {
+  { 
     path: "/employee",
     Element: EmployeesPage,
     isAuthenticated: true,

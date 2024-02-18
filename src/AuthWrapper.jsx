@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase/config';
+import { TailSpin } from 'react-loader-spinner'
 
 const AuthWrapper = ({ children }) => {
-  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
+  const [checkingAuth, setCheckingAuth] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -12,14 +13,18 @@ const AuthWrapper = ({ children }) => {
       if (!user) {
         navigate('/');
       }
-      setIsCheckingAuth(false);
+      setCheckingAuth(false);
     });
 
     return unsubscribe;
   }, [navigate]);
 
-  if (isCheckingAuth) {
-    return <h1>Loading...</h1>; 
+  if (checkingAuth) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <TailSpin />
+      </div>
+    ); 
   }
 
   return children;
