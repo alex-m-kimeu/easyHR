@@ -26,17 +26,10 @@ export const App = () => {
               key={index}
               path={path}
               element={
-                isAuthenticated ? (
-                  <AuthWrapper>
-                    <LayoutComponent>
-                      <Element />
-                    </LayoutComponent>
-                  </AuthWrapper>
-                ) : (
-                  <LayoutComponent>
-                    <Element />
-                  </LayoutComponent>
-                )
+                <LayoutComponent>
+                  {isAuthenticated && <AuthWrapper />}
+                  <Element />
+                </LayoutComponent>
               }
             />
           );
