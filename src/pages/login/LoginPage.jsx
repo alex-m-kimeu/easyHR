@@ -44,7 +44,7 @@ export const LoginPage = () => {
     )
       .then((userCredential) => {
         const user = userCredential.user;
-        localStorage.setItem('accessToken', userCredential.user.accessToken);
+        localStorage.setItem('authToken', userCredential.user.accessToken);
         navigate('/employee');
       })
       .catch((error) => {

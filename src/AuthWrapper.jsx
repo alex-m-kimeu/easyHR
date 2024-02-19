@@ -1,33 +1,17 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from './firebase/config';
-import { TailSpin } from 'react-loader-spinner'
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
 
 const AuthWrapper = ({ children }) => {
-  const [checkingAuth, setCheckingAuth] = useState(true);
+  const isAuthenticated = !!localStorage.getItem("authToken");
+
   const navigate = useNavigate();
-
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        navigate('/');
-      }
-      setCheckingAuth(false);
-    });
+    if (!isAuthenticated) {
+      return navigate("/");
+    }
+  }, [isAuthenticated, navigate]);
 
-    return unsubscribe;
-  }, [navigate]);
-
-  if (checkingAuth) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <TailSpin />
-      </div>
-    ); 
-  }
-
-  return children;
+  return <div>{children}</div>;
 };
 
 export default AuthWrapper;

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { IoTrashBin } from "react-icons/io5";
-import { MdNoteAlt } from "react-icons/md";
+// import { MdNoteAlt } from "react-icons/md";
 
 export const EmployeeTable = ({ employee, onDelete }) => {
   // Delete employee
@@ -26,12 +26,12 @@ export const EmployeeTable = ({ employee, onDelete }) => {
       <td className="p-[10px]">{employee.department}</td>
       <td className="p-[10px]">{employee.role}</td>
       <td className="p-[10px]">{employee.gender}</td>
-      <td className="p-[10px] flex gap-[5px]">
-        <button>
+      <td className="p-[10px]">
+        {/* <button>
           <MdNoteAlt className="fill-green mr-2" />
-        </button>
+        </button> */}
         <button onClick={handleDelete}>
-          <IoTrashBin className="fill-[#FF3C5F]" />
+          <IoTrashBin className="fill-[#FF3C5F] flex items-center ml-6" />
         </button>
       </td>
     </tr>
