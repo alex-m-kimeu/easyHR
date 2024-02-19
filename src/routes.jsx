@@ -8,19 +8,19 @@ const routes = [
     path: "/",
     Element: LoginPage,
     isAuthenticated: false,
-    layout: "None", // No layout for login page
+    layout: "None", 
   },
   { 
     path: "/employee",
     Element: EmployeesPage,
     isAuthenticated: true,
-    layout: "Main", // Main layout for employee page
+    layout: "Main", 
   },
   {
     path: "/hire",
     Element: NewHire,
     isAuthenticated: true,
-    layout: "Main", // Main layout for new hire page
+    layout: "Main", 
   },
   {
     path: "*",
